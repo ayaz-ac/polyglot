@@ -224,10 +224,12 @@ module Jekyll
       regex = ''
       unless disabled
         @exclude.each do |x|
-          regex += "(?!#{x})"
+          escaped_x = Regexp.escape(x)
+          regex += "(?!#{escaped_x})"
         end
         @languages.each do |x|
-          regex += "(?!#{x}\/)"
+          escaped_x = Regexp.escape(x)
+          regex += "(?!#{escaped_x}\/)"
         end
       end
       start = disabled ? 'ferh' : 'href'
@@ -242,10 +244,12 @@ module Jekyll
       regex = ''
       unless disabled
         @exclude.each do |x|
-          regex += "(?!#{x})"
+          escaped_x = Regexp.escape(x)
+          regex += "(?!#{escaped_x})"
         end
         @languages.each do |x|
-          regex += "(?!#{x}\/)"
+          escaped_x = Regexp.escape(x)
+          regex += "(?!#{escaped_x}\/)"
         end
       end
       start = disabled ? 'ferh' : 'href'
